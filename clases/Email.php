@@ -30,7 +30,7 @@ class Email{
         $mail->Password = 'bea8a1344ae684';
 
         $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress($this->email, 'AppSalon.com');
+        $mail->addAddress($this->email);
         $mail->Subject = 'Confirma Tu Cuenta';
 
         // Set HTML
@@ -63,7 +63,7 @@ class Email{
         $mail->Password = 'bea8a1344ae684';
 
         $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress($this->email, 'AppSalon.com');
+        $mail->addAddress($this->email);
         $mail->Subject = 'Reestablece tu Password';
 
         // Set HTML
