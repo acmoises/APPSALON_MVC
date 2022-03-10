@@ -32,6 +32,7 @@ class Email{
         $mail->setFrom('cuentas@appsalon.com');
         $mail->addAddress($this->email);
         $mail->Subject = 'Confirma Tu Cuenta';
+        $server = $_SERVER['HTTP_HOST'];
 
         // Set HTML
         $mail->isHTML(true);
@@ -39,7 +40,7 @@ class Email{
 
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Has creado tu cuenta en AppSalon, solo debes confirmarlo presionanso el siguiente enlace<p>";
-        $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/confirmar-cuenta?token=". $this->token ."'>Confirmar Cuenta</a></p>";
+        $contenido .= "<p>Presiona aquí: <a href='https://". $server ."/confirmar-cuenta?token=". $this->token ."'>Confirmar Cuenta</a></p>";
         $contenido .= "<p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
 
@@ -69,10 +70,11 @@ class Email{
         // Set HTML
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
+        $server = $_SERVER['HTTP_HOST'];
 
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Has solicitado reestablecer tu password, solo debes confirmarlo presionanso el siguiente enlace<p>";
-        $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/recuperar?token=". $this->token ."'>Reestablecer Password</a></p>";
+        $contenido .= "<p>Presiona aquí: <a href='https://". $server ."/recuperar?token=". $this->token ."'>Reestablecer Password</a></p>";
         $contenido .= "<p>Si tu no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
 
